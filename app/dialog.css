@@ -1,0 +1,36 @@
+/* The frame stays fixed while only the project body scrolls. */
+.dialog-overlay{background:rgb(8 11 7 / 76%);backdrop-filter:blur(12px);animation:modal-backdrop-in 260ms ease-out both}
+.dialog-overlay[data-state=closed]{animation:modal-backdrop-out 200ms ease-in both}
+.dialog-content{display:flex;flex-direction:column;width:min(760px,calc(100vw - 40px));max-height:calc(100dvh - 64px);padding:0;overflow:hidden;border:1px solid #45533a;border-radius:20px;background:#1c2219;box-shadow:0 32px 100px #0009,0 0 0 1px #ffffff03 inset;animation:modal-panel-in 360ms cubic-bezier(.16,1,.3,1) both}
+.dialog-content[data-state=closed]{animation:modal-panel-out 200ms cubic-bezier(.4,0,1,1) both;pointer-events:none}
+.dialog-header{flex-shrink:0;padding:29px 72px 24px 32px;border-bottom:1px solid #394530;background:linear-gradient(125deg,#283221,#1c2219)}
+.dialog-header .eyebrow{margin:0 0 12px;font-size:11px;color:#bbd19f;letter-spacing:.14em}
+.dialog-header .dialog-title{font-size:38px;line-height:1.12;margin:0;font-weight:500;letter-spacing:-.055em}
+.dialog-subtitle{font-size:14px;color:#a6b498;margin:10px 0 0;line-height:1.5}
+.dialog-close{position:absolute;right:21px;top:24px;width:36px;height:36px;display:grid;place-items:center;border:1px solid #566346;border-radius:50%;background:#ffffff04;color:#dce8ce;padding:0;transition:background .2s,transform .2s,color .2s}
+.dialog-close:hover{background:#d5ff63;color:#182110;border-color:#d5ff63;transform:rotate(90deg)}
+.dialog-close:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+.dialog-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:26px 26px 28px 32px}
+.dialog-scroll .dialog-art{margin:0 0 24px}
+.dialog-scroll .dialog-art .art{height:230px;border-radius:10px}
+.dialog-scroll .dialog-description{font-size:15px;line-height:1.8;color:#bbc8ae;margin:0 0 22px}
+.dialog-section-label{font:11px monospace;letter-spacing:.12em;color:#829771;margin:26px 0 13px}
+.dialog-scroll .project-features{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px;line-height:1.6}
+.dialog-scroll .project-features li{display:flex;gap:12px;margin:0;padding:11px 14px;border:1px solid #35432a;border-radius:7px;background:#ffffff02;color:#c1cfb3}
+.dialog-scroll .project-features li:before{content:'↗';flex-shrink:0;color:var(--lime);font-size:15px}
+.dialog-footer{flex-shrink:0;padding:18px 32px;border-top:1px solid #3b4930;background:#20281b}
+.dialog-footer .project-links{gap:25px;margin:0;align-items:center}
+.dialog-footer .button{padding:13px 20px;font-size:13px;gap:20px;border-radius:6px}
+.dialog-footer .text-link{font-size:13px;max-width:none}
+.dialog-scroll,.email-draft pre,html{scrollbar-width:thin;scrollbar-color:#728659 #1c2219}
+.dialog-scroll::-webkit-scrollbar,.email-draft pre::-webkit-scrollbar,html::-webkit-scrollbar{width:7px;height:7px}
+.dialog-scroll::-webkit-scrollbar-track,.email-draft pre::-webkit-scrollbar-track,html::-webkit-scrollbar-track{background:#1c2219;border-radius:10px}
+.dialog-scroll::-webkit-scrollbar-thumb,.email-draft pre::-webkit-scrollbar-thumb,html::-webkit-scrollbar-thumb{background:#728659;border:2px solid #1c2219;border-radius:10px}
+.dialog-scroll::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:hover{background:#b5d47f}
+.dialog-scroll::-webkit-scrollbar-button,html::-webkit-scrollbar-button{display:none;width:0;height:0}
+@keyframes modal-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes modal-backdrop-out{from{opacity:1}to{opacity:0}}
+@keyframes modal-panel-in{from{opacity:0;transform:translate(-50%,calc(-50% + 22px)) scale(.955)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes modal-panel-out{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:0;transform:translate(-50%,calc(-50% + 12px)) scale(.975)}}
+@media(max-width:640px){.dialog-content{width:calc(100vw - 24px);max-height:calc(100dvh - 32px);border-radius:16px}.dialog-header{padding:24px 62px 20px 22px}.dialog-header .dialog-title{font-size:31px}.dialog-header .eyebrow{font-size:10px}.dialog-close{top:22px;right:18px;width:33px;height:33px}.dialog-scroll{padding:20px 17px 22px 22px}.dialog-scroll .dialog-art .art{height:190px}.dialog-scroll .dialog-description{font-size:14px;line-height:1.75}.dialog-scroll .project-features{font-size:13px}.dialog-footer{padding:16px 22px}.dialog-footer .project-links{gap:18px;flex-wrap:wrap}.dialog-footer .button{padding:12px 16px;font-size:12px}.dialog-footer .text-link{font-size:12px}.dialog-subtitle{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.dialog-content,.dialog-overlay{animation:none!important}.dialog-close:hover{transform:none}}

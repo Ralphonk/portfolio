@@ -1,0 +1,3 @@
+.hero-actions{flex-wrap:wrap;gap:16px}.resume-button{border:1px solid #59674b;color:#e3ebda;gap:13px;padding:17px 20px}.resume-button:hover{background:#d5ff6312;border-color:var(--lime);color:var(--lime)}
+@media(max-width:640px){.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}.hero-actions .magnetic{min-width:0}.hero-actions .button{width:100%;padding:14px 12px;font-size:12px;gap:9px;min-height:52px}.hero-actions .button svg{flex-shrink:0}.resume-button{line-height:1.4;text-align:center}}
+@media(max-width:360px){.hero-actions{grid-template-columns:1fr}}
