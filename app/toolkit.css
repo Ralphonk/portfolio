@@ -21,6 +21,10 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 .toolkit-category-0 li:after{display:none}
 .toolkit-category-0 .toolkit-card-top{margin-bottom:26px}
 .toolkit-category-0 h3{font-size:25px;margin-bottom:16px}
+.toolkit-category-5{grid-column:1/-1;display:grid;grid-template-columns:auto 170px 1fr;align-items:center;gap:24px;padding:20px 25px}
+.toolkit-category-5 .toolkit-card-top{margin:0;gap:18px}
+.toolkit-category-5 h3{margin:0;font-size:20px}
+.toolkit-category-5 ul{justify-content:flex-end}
 @media(max-width:1000px){.toolkit-grid{grid-template-columns:1fr 1fr}.toolkit-category-0{grid-row:auto;grid-column:1/-1}.toolkit-category-0 ul{grid-template-columns:repeat(4,minmax(0,1fr))}.toolkit-category-0 .toolkit-card-top{margin-bottom:18px}.toolkit-group{padding:22px}}
-@media(max-width:640px){.stack-strip.toolkit-section{padding:44px 0}.toolkit-heading{display:block;margin-bottom:24px}.toolkit-heading .toolkit-caption{margin-top:15px}.toolkit-heading .toolkit-caption br{display:none}.toolkit-grid{grid-template-columns:1fr;gap:12px}.toolkit-category-0{grid-column:auto}.toolkit-category-0 ul{grid-template-columns:1fr 1fr}.toolkit-group{padding:22px}.toolkit-card-top{margin-bottom:17px}.toolkit-group h3{font-size:20px}.toolkit-group li{font-size:14px}.toolkit-icon{width:38px;height:38px}}
+@media(max-width:640px){.stack-strip.toolkit-section{padding:44px 0}.toolkit-heading{display:block;margin-bottom:24px}.toolkit-heading .toolkit-caption{margin-top:15px}.toolkit-heading .toolkit-caption br{display:none}.toolkit-grid{grid-template-columns:1fr;gap:12px}.toolkit-category-0{grid-column:auto}.toolkit-category-0 ul{grid-template-columns:1fr 1fr}.toolkit-group{padding:22px}.toolkit-card-top{margin-bottom:17px}.toolkit-group h3{font-size:20px}.toolkit-group li{font-size:14px}.toolkit-icon{width:38px;height:38px}.toolkit-category-5{grid-column:auto;display:block}.toolkit-category-5 .toolkit-card-top{margin-bottom:17px}.toolkit-category-5 h3{margin-bottom:18px}.toolkit-category-5 ul{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.toolkit-group{transition:none}}

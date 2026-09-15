@@ -1,9 +1,10 @@
-import { Braces, Server, Database, Cloud, Wrench } from 'lucide-react';
+import { Braces, Server, Bot, Database, Cloud, Wrench } from 'lucide-react';
 
-const icons = [Braces, Server, Database, Cloud, Wrench];
+const icons = [Braces, Server, Bot, Database, Cloud, Wrench];
 const groups = [
   { title: 'Frontend', tools: ['JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Redux', 'GSAP', 'Three.js', 'Tailwind CSS', 'shadcn/ui', 'Material UI', 'HTML5', 'CSS3', 'Framer Motion'] },
   { title: 'Backend', tools: ['Node.js', 'Express.js', 'Python', 'Socket.io', 'Prisma'] },
+  { title: 'AI & APIs', tools: ['Gemini AI', 'OpenAI API'] },
   { title: 'Databases & Caching', tools: ['PostgreSQL', 'MongoDB (Local & Atlas)', 'Supabase', 'Redis'] },
   { title: 'Infrastructure & Cloud', tools: ['Docker', 'Google Kubernetes Engine (GKE)', 'AWS', 'Microsoft Azure', 'Vercel', 'Render'] },
   { title: 'Tools', tools: ['Git', 'GitHub', 'VS Code', 'Figma', 'Canva'] },
