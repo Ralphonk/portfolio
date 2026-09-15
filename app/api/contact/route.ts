@@ -2,13 +2,14 @@ import { CONTACT_EMAIL, validateContact } from '@/lib/contact';
 
 export const runtime = 'nodejs';
 const attempts = new Map<string,{count:number;until:number}>();
-function configured() { return !!(process.env.RESEND_API_KEY && process.env.CONTACT_FROM_EMAIL && process.env.CONTACT_ALLOWED_ORIGIN); }
+function configured() { return !!(process.env.RESEND_API_KEY && process.env.CONTACT_FROM_EMAIL); }
 export async function GET() { return Response.json({mode:configured()?'direct':'draft'},{headers:{'Cache-Control':'no-store'}}); }
 
 export async function POST(request:Request) {
   const origin=request.headers.get('origin');
-  const allowed=process.env.CONTACT_ALLOWED_ORIGIN || new URL(request.url).origin;
-  if(!origin||origin!==allowed)return Response.json({error:'This request is not allowed.'},{status:403});
+  const requestOrigin=new URL(request.url).origin;
+  const configuredOrigins=(process.env.CONTACT_ALLOWED_ORIGIN||'').split(',').map(value=>value.trim()).filter(Boolean);
+  if(!origin||(origin!==requestOrigin&&!configuredOrigins.includes(origin)))return Response.json({error:'This request is not allowed.'},{status:403});
   if(!request.headers.get('content-type')?.includes('application/json'))return Response.json({error:'Expected a JSON submission.'},{status:415});
   if(Number(request.headers.get('content-length')||0)>18000)return Response.json({error:'The message is too large.'},{status:413});
   let input:unknown;
